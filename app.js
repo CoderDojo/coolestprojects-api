@@ -7,6 +7,7 @@ var Accessor = require("Accessor")
 db = {
 	user: Accessor("users", "MySQL")
 }
+console.log(process.env['DB_PASSWORD'] || "")
 
 var user = require('./lib/user')
 var responses = require('./lib/responses')
