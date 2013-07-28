@@ -8,13 +8,13 @@ command -v npm >/dev/null 2>&1 || { echo >&2 "NPM isn't installed."; exit 1; }
 npm install
 
 # Get MySQL credentials
-echo "Enter your database host name:"
+echo -n "Enter your database host name: "
 read CPB_SQL_HOST
-echo "Enter your database user name:"
+echo -n "Enter your database user name: "
 read CPB_SQL_USER
-echo "Enter your database password:"
+echo -n "Enter your database password: "
 read CPB_SQL_PASS
-echo "Enter your database name:"
+echo -n "Enter your database name: "
 read CPB_SQL_NAME
 
 # Create runscript and load all the env variables
@@ -22,9 +22,9 @@ cat > runDevScript.sh <<DELIM
 #!/bin/bash
 DB_HOST=$CPB_SQL_HOST
 DB_USER=$CPB_SQL_USER
-DB_PASS=$CPB_SQL_PASS
+DB_PASSWORD=$CPB_SQL_PASS
 DB_NAME=$CPB_SQL_NAME
-export DB_HOST DB_USER DB_PASS DB_NAME
+export DB_HOST DB_USER DB_PASSWORD DB_NAME
 node app.js
 DELIM
 
@@ -34,4 +34,5 @@ chmod +x runDevScript.sh
 # YAY!
 echo <<DELIM
 We've created a file so that you can run the node server easily and
-automatically
+automatically. Just type "./runDevScript.sh" to start the app server.
+DELIM
