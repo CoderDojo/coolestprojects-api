@@ -11,9 +11,9 @@ db = new sequelize(dbConfig.database, dbConfig.user, dbConfig.password, {
 var userModel = require("./lib/user/model")
 
 app.get('/', function(req,res) {
-	User.create({ name: 'BenChapman' }).success(function(user) {
-	  res.json(user.dataValues)
-	})
+	userModel.find({ where: {id: 1}}).success(function(userRecord){
+		res.json(userRecord)
+	});
 })
 
 var user = require('./lib/user')
