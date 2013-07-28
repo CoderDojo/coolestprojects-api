@@ -35,3 +35,4 @@ chmod +x runDevScript.sh
 echo <<DELIM
 We've created a file so that you can run the node server easily and
 automatically
+DELIM
