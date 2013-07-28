@@ -2,13 +2,19 @@ var express = require('express')
 var app = express()
 app.use(express.bodyParser());
 
-// SEE: https://github.com/bu/Accessor_MySQL for DB instructions
-var Accessor = require("Accessor")
-db = {
-	user: Accessor("users", "MySQL"),
-	activity: Accessor("activity", "MySQL")
-	
-}
+var dbConfig = require('./config/database')
+var sequelize = require("sequelize")
+db = new sequelize(dbConfig.database, dbConfig.user, dbConfig.password, {
+	host: dbConfig.host,
+	port: dbConfig.port
+})
+var userModel = require("./lib/user/model")
+
+app.get('/', function(req,res) {
+	User.create({ name: 'BenChapman' }).success(function(user) {
+	  res.json(user.dataValues)
+	})
+})
 
 var user = require('./lib/user')
 var activity = require('./lib/activity')
