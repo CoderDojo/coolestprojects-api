@@ -1,5 +1,5 @@
 var databaseConfig = { 
-    user: process.env['DB_USER'] || "root",
+    user: process.env['CPB_DB_USER'] || "root",
     password: process.env['DB_PASSWORD'] || "",
     database: process.env['DB_NAME'] || "coolestprojects",
     host: process.env['DB_HOST'] || "localhost",
