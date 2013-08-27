@@ -1,0 +1,49 @@
+<header class="bar-title">
+    <a class="button" href="#about">
+        <img src="img/about.png">
+    </a>
+    <div class="title">
+        <img src="img/topbar.png">
+    </div>
+</header>
+
+<div class="content">
+    <h1>Register</h1>
+    <div class="content-padded">
+        <form>
+            <div class="error" id="error">
+            </div>
+            <input id="email" name="email" placeholder="Email" type="email" required>
+            <input id="password" name="password" placeholder="Password" type="password" required>
+            <input id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password" oninput="check(this)" required>
+            <input id="name" name="name" placeholder="Your name" type="text" required>
+            <input id="coderdojo" name="coderdojo" placeholder="Coderdojo that you're from" type="text">
+
+            <input class="button-blue full" type="submit" value="Create New Account" class="button-main button-block" role="button">
+        </form>
+    </div>
+</div>
+
+<script>
+    function check(input) {
+        console.log(input.value);
+        console.log($('password').value);
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('The two passwords must match.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
