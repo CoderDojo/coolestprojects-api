@@ -1,0 +1,28 @@
+<header class="bar-title">
+    <a class="button" href="#!/about">
+        <img src="img/about.png">
+    </a>
+    <div class="title">
+        <a href="#!/"><img src="img/topbar.png"></a>
+    </div>
+</header>
+
+<div class="content">
+    <h1>Already have an account?</h1>
+    <div class="content-padded">
+        <form ng-submit="login()">
+            <div class="alert-error" id="error" ng-show="error" ng-bind-html-unsafe="error"></div>
+            <div class="input">
+                <input id="email" name="email" placeholder="Email" type="email" required="" ng-model="credentials.email">
+                <input id="password" name="password" placeholder="Password" type="password" required="" ng-model="credentials.password">
+            </div>
+            <input class="button-blue" type="submit" value="Log In" name="login" role="button">
+        </form>
+    </div>
+    <h1>New to CoolestProjects?</h1>
+    <div class="content-padded">
+        <a href="#!/register" class="button full" role="button">
+                    Create New Account
+            </a>
+    </div>
+</div>

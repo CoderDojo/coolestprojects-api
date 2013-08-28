@@ -1,0 +1,25 @@
+<header class="bar-title">
+    <a class="button" href="#!/home"><img src="img/home.png"></a>
+    <div class="title">
+        <img src="img/topbar.png">
+    </div>
+    <a class="button" href="#"><img src="img/logout.png"></a>
+</header>
+
+<div class="content">
+    <h1>Messages</h1>
+    	<div class="" id="error" ng-show="error" ng-bind-html-unsafe="error"></div>
+     	<div class="" id="success" ng-show="success" ng-bind-html-unsafe="success"></div>
+     <form ng-submit="send()">
+
+            <div class="input">
+                <input id="message" name="message" placeholder="Type your message" type="text" required="" ng-model="message.message">
+            </div>
+            <input class="button-blue" type="submit" value="Send" name="send" role="button">
+     </form>
+    <div class="content-padded">
+    </div>
+</div>
+
+
+

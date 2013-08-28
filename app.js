@@ -23,7 +23,6 @@ function handler (req, res) {
       res.writeHead(500);
       return res.end('Error loading index.html');
     }
-
     res.writeHead(200);
     res.end(data);
   });
@@ -32,7 +31,7 @@ function handler (req, res) {
 var user = require('./lib/user')
 var activity = require('./lib/activity')
 var responses = require('./lib/responses')
-
+var message = require('./lib/messages')
 
 
 
@@ -40,6 +39,7 @@ var responses = require('./lib/responses')
 app.use(user)
 app.use(activity)
 app.use(responses)
+app.use(message)
 
 app.listen(process.env.PORT || 3000)
 console.log("Listening on port "+(process.env.PORT || 3000))
