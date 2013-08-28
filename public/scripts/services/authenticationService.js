@@ -15,7 +15,7 @@ coolestProjectsApp.factory("authenticationService", function($http, sessionServi
             return login;
         },
         logout: function() {
-            var logout = $http.get("/auth/logout");
+            var logout = $http.get(API_URL + "/auth/logout");
             logout.success(uncacheSession);
             return logout;
         },

@@ -4,7 +4,7 @@ coolestProjectsApp.factory("sessionService", function($cookies) {
             return sessionStorage.getItem(key);
         },
         getSecurityHash: function() {
-            console.log('Requesting security session ')
+            console.log('Requesting security session');
             return $cookies.session_hash;
         },
         set: function(key, val) {

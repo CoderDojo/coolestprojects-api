@@ -5,7 +5,7 @@ coolestProjectsApp.controller('LoginCtrl', function($scope, $location, authentic
     };
 
     $scope.login = function() {
-        console.log('Login called ')
+        console.log('Login called ');
         authenticationService.login($scope.credentials).success(
             function(data, status, headers, config) {
                 $location.path("/home");

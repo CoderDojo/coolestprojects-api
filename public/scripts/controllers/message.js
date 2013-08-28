@@ -5,17 +5,17 @@ coolestProjectsApp.controller('MessageCtrl', function($scope, $location, $http, 
     };
 
     $scope.send = function() {
-        console.log('Message to be sent ')
-        $scope.message.session_hash = sessionService.getSecurityHash()
+        console.log('Message to be sent ');
+        $scope.message.session_hash = sessionService.getSecurityHash();
 
         errorService.clear();
         $scope.success = "";
 
         if (message) {
-            $http.post('message/add', $scope.message)
+            $http.post(API_URL + 'message/add', $scope.message)
                 .success(function(data, status, headers, config) {
-                    $scope.success = "Message added"
-                    $scope.message = ""
+                    $scope.success = "Message added";
+                    $scope.message = "";
                 })
                 .error(function(data, status, headers, config) {
                     console.log(data.error.message);

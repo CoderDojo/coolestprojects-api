@@ -10,14 +10,14 @@ coolestProjectsApp.controller('RegisterCtrl', function($scope, $location, $http,
     errorService.clear();
 
     $scope.register = function() {
-        console.log('logging')
-        $scope.repassword;
+        console.log('logging');
+
         var passed = false;
         errorService.clear();
         passed = validatePassword($scope.user.password, $scope.repassword);
 
         if (passed) {
-            $http.post('user/register', $scope.user)
+            $http.post(API_URL + 'user/register', $scope.user)
                 .success(function(data, status, headers, config) {
                     console.log(data);
                 })
