@@ -1,26 +1,26 @@
 coolestProjectsApp.factory("authenticationService", function($http, sessionService) {
-    var cacheSession   = function() {
-    sessionService.set('authenticated', true);
-  };
+    var cacheSession = function() {
+        sessionService.set('authenticated', true);
+    };
 
-  var uncacheSession = function() {
-    sessionService.unset('authenticated');
-  };
+    var uncacheSession = function() {
+        sessionService.unset('authenticated');
+    };
 
-  return {
-    login: function(credentials) {
-      var login = $http.post(API_URL+"/user/login", credentials);
-      login.success(cacheSession);
-      //login.error(loginError);
-      return login;
-    },
-    logout: function() {
-      var logout = $http.get("/auth/logout");
-      logout.success(uncacheSession);
-      return logout;
-    },
-    isAuthenticated: function() {
-      return sessionService.get('authenticated');
-    }
-  };
+    return {
+        login: function(credentials) {
+            var login = $http.post(API_URL + "/user/login", credentials);
+            login.success(cacheSession);
+            //login.error(loginError);
+            return login;
+        },
+        logout: function() {
+            var logout = $http.get("/auth/logout");
+            logout.success(uncacheSession);
+            return logout;
+        },
+        isAuthenticated: function() {
+            return sessionService.get('authenticated');
+        }
+    };
 });
