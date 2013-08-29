@@ -31,6 +31,10 @@ coolestProjectsApp.config(function($routeProvider, $locationProvider) {
         templateUrl: 'views/about.html',
     });
 
+    $routeProvider.when('/schedule', {
+        templateUrl: 'views/schedule.html',
+    });
+
     $routeProvider.when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'

@@ -11,7 +11,6 @@ coolestProjectsApp.factory("authenticationService", function($http, sessionServi
         login: function(credentials) {
             var login = $http.post(API_URL + "user/login", credentials);
             login.success(cacheSession);
-            //login.error(loginError);
             return login;
         },
         logout: function() {
