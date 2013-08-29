@@ -1,6 +1,6 @@
 var storage = window.localStorage;
-var API_URL = "http://coolestprojects.mobi/";
-socket = io.connect(API_URL);
+var API_URL = "http://coolestprojects.mobi:80";
+var socket = io.connect(API_URL);
 var coolestProjectsApp = angular.module("coolestProjectsApp", ['ngCookies', 'ngSanitize']);
 
 coolestProjectsApp.config(function($routeProvider, $locationProvider) {
