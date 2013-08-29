@@ -337,3 +337,9 @@ div#steps {
     text-align: center;
     width: 100%;
 }
+
+.author {
+    color: #6699CC;
+    margin-right: 10px;
+    width: 30%;
+}

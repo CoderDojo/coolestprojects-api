@@ -1,5 +1,6 @@
 var storage = window.localStorage;
-var API_URL = "http://localhost:3000";
+var API_URL = "http://localhost:3000/";
+socket = io.connect(API_URL);
 var coolestProjectsApp = angular.module("coolestProjectsApp", ['ngCookies', 'ngSanitize']);
 
 coolestProjectsApp.config(function($routeProvider, $locationProvider) {
@@ -40,7 +41,6 @@ coolestProjectsApp.config(function($routeProvider, $locationProvider) {
     });
 });
 
-
 coolestProjectsApp.run(function($rootScope, $location, authenticationService) {
     var routesThatDontRequireAuth = ['/login', '/about', '/register'];
 
@@ -50,3 +50,11 @@ coolestProjectsApp.run(function($rootScope, $location, authenticationService) {
         }
     });
 });
+
+coolestProjectsApp.filter('reverse', function() {
+  return function(items) {
+    console.log(items)
+    if(items && items.length > 0) 
+        return items.slice().reverse();
+    }
+  });

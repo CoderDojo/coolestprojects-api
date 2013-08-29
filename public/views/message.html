@@ -7,7 +7,7 @@
 </header>
 
 <div class="content">
-    <h1>Messages</h1>
+    <h1>Share message</h1>
     	<div class="" id="error" ng-show="error" ng-bind-html-unsafe="error"></div>
      	<div class="" id="success" ng-show="success" ng-bind-html-unsafe="success"></div>
      <form ng-submit="send()">
@@ -17,7 +17,11 @@
             </div>
             <input class="button-blue" type="submit" value="Send" name="send" role="button">
      </form>
-    <div class="content-padded">
+     <h1>Messages</h1>
+    <div  id="messages" class="content-padded">
+        <ul>
+            <li ng-repeat="message in messages | reverse"><div class="author">{{message.author}}</div>{{message.message}}</li>
+        <li>
     </div>
 </div>
 
