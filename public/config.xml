@@ -13,7 +13,7 @@
     <author href="http://coolestprojects.org/" email="coolestprojects@coderdojodcu.com">
       CoolestProjects.Org
     </author>
-   
+
     <gap:plugin name="com.phonegap.plugins.barcodescanner" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -43,14 +43,12 @@
 
     <access origin="*" />
 
-    <gap:splash src="img/screens/screen-.png" gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="android" gap:density="xhdpi" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="blackberry" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="img/screens/screen-.png" gap:platform="winphone" />
+    <gap:splash src="img/screens/screen-426-320.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="img/screens/screen-470x320.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="img/screens/screen-640x480.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="img/screens/screen-960x720.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="img/screens/screen-320x480.png" gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="img/screens/screen-640x960.png" gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="img/screens/screen-768x1024.png" gap:platform="ios"     width="768" height="1024" />
+    <gap:splash src="img/screens/screen-1024x768.png" gap:platform="ios"     width="1024" height="768" />
 </widget>

@@ -15,6 +15,13 @@
 
       <link rel="stylesheet" href="styles/main.css">
       <link rel="stylesheet" href="styles/warning.css">
+      <script>
+          document.addEventListener("deviceready", loadApp, true);
+          function loadApp() {
+            navigator.splashscreen.hide();
+            document.addEventListener("backbutton", navigator.app.exitApp, false);
+          }
+      </script>
   </head>
   <body id="ng-app" ng-app="coolestProjectsApp" role="application" aria-live="polite">
       <div ng-view>
@@ -32,7 +39,7 @@
       <script src="scripts/services/authenticationService.js"></script>
       <script src="scripts/services/sessionService.js"></script>
        <script src="scripts/services/errorService.js"></script>
-      
+
       <script src="scripts/controllers/login.js"></script>
       <script src="scripts/controllers/register.js"></script>
       <script src="scripts/controllers/home.js"></script>
