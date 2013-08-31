@@ -1,5 +1,5 @@
 var storage = window.localStorage;
-var API_URL = "http://coolestprojects.mobi:80";
+var API_URL = "http://localhost:3000/";
 var socket = io.connect(API_URL);
 var coolestProjectsApp = angular.module("coolestProjectsApp", ['ngCookies', 'ngSanitize']);
 
@@ -35,9 +35,29 @@ coolestProjectsApp.config(function($routeProvider, $locationProvider) {
         templateUrl: 'views/schedule.html',
     });
 
+    $routeProvider.when('/leaderboard', {
+        templateUrl: 'views/leaderboard.html',
+        controller: 'LeaderBoardCtrl'
+    });
+
     $routeProvider.when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
+    });
+
+    $routeProvider.when('/vote', {
+        templateUrl: 'views/vote.html',
+        controller: 'VoteCtrl'
+    });
+
+    $routeProvider.when('/logout', {
+        templateUrl: 'views/logout.html',
+        controller: 'LogoutCtrl'
+    });
+
+    $routeProvider.when('/messageboard', {
+        templateUrl: 'views/messageboard.html',
+        controller: 'MessageBoardCtrl'
     });
 
     $routeProvider.otherwise({

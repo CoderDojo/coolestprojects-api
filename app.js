@@ -39,12 +39,14 @@ var activity = require('./lib/activity')
 var responses = require('./lib/responses')
 var message = require('./lib/messages')
 var vote = require('./lib/vote')
+var project = require('./lib/project')
 
 app.use(user)
 app.use(activity)
 app.use(responses)
 app.use(message)
 app.use(vote)
+app.use(project)
 
 var server = app.listen(app.get('port'), function(){
   console.log("Coolest Projects server listening on port " + app.get('port'));

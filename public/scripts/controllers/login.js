@@ -12,8 +12,12 @@ coolestProjectsApp.controller('LoginCtrl', function($scope, $location, $cookies,
                 $location.path("/home");
             }
         ).error(function(data, status, headers, config) {
-                    console.log(data.error.message);
-                    errorService.show(data.error.message);
+                    if(data.error && data.error.message) {
+                        console.log(data.error.message);
+                        errorService.show(data.error.message);
+                    } else {
+                        errorService.show(data);
+                    }
         });
     };
 });

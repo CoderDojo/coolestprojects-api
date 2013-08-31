@@ -1,4 +1,4 @@
-coolestProjectsApp.controller('RegisterCtrl', function($scope, $location, $http, errorService) {
+coolestProjectsApp.controller('RegisterCtrl', function($scope, $location, $cookies, $http, errorService, authenticationService) {
 
     $scope.user = {
         email: "",
@@ -19,7 +19,20 @@ coolestProjectsApp.controller('RegisterCtrl', function($scope, $location, $http,
         if (passed) {
             $http.post(API_URL + 'user/register', $scope.user)
                 .success(function(data, status, headers, config) {
-                    console.log(data);
+                    authenticationService.login($scope.user).success(
+                        function(data, status, headers, config) {
+                            $cookies.session_hash = data.sessionKey;
+                            console.log('open home')
+                            $location.path("/home");
+                        }
+                    ).error(function(data, status, headers, config) {
+                                if(data.error && data.error.message) {
+                                    console.log(data.error.message);
+                                    errorService.show(data.error.message);
+                                } else {
+                                    errorService.show(data);
+                                }
+                    });
                 })
                 .error(function(data, status, headers, config) {
                     console.log(data.error.message);

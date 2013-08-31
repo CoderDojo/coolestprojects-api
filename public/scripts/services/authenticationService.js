@@ -9,6 +9,7 @@ coolestProjectsApp.factory("authenticationService", function($http, sessionServi
 
     return {
         login: function(credentials) {
+            console.log(API_URL + "user/login");
             var login = $http.post(API_URL + "user/login", credentials);
             login.success(cacheSession);
             return login;
